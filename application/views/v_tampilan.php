@@ -41,21 +41,75 @@
 			integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
 			crossorigin="anonymous"
 		/>
-		<link rel="stylesheet" href="<?= base_url('teamplate')?>/dist/css/adminlte.css" />
+		<link
+			rel="stylesheet"
+			href="<?= base_url('teamplate')?>/dist/css/adminlte.css"
+		/>
 		<title>Kasir</title>
 	</head>
 	<body>
-  <div class="navbar bg-body-secondary rounded-bottom ">
-      <!-- Menambahkan flex dan justify-center untuk menengahkan navbar -->
-      <div class="nav flex justify-center items-center ">
-        <ul class="nav flex space-x-4 ">
-          <li class="m-1 p-2 "><a href="" class="text-black fs-5 fw-semibold text-decoration-none">Barang</a></li>
-          <li class="m-1 p-2"><a href="" class="text-black fs-5 fw-semibold text-decoration-none" >Kasir</a></li>
-          <li class="m-1 p-2"><a href="" class="text-black fs-5 fw-semibold text-decoration-none">Riwayat</a></li>
-        </ul>
-      </div>
-    </div>
+		<div class="navbar bg-body-secondary rounded-bottom ">
+			<!-- Menambahkan flex dan justify-center untuk menengahkan navbar -->
+			<div class="nav flex justify-center items-center container text-center">
+				<ul class="nav flex space-x-4 ">
+					<li class="m-1 p-2">
+						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
+							>Barang</a
+						>
+					</li>
+					<li class="m-1 p-2">
+						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
+							>Kasir</a
+						>
+					</li>
+					<li class="m-1 p-2">
+						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
+							>Riwayat</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
 
+		<!-- card start -->
+		<div class="container row">
+			<div class="card m-3" style="width: 18rem">
+				<img
+					src="<?= base_url('teamplate')?>/src/assets/img/avatar2.png"
+					class="card-img-top"
+					alt="Testing"
+					style="width: 10rem; display: block; margin: auto"
+				/>
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<br />
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content.
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card m-3" style="width: 18rem">
+				<img
+					src="<?= base_url('teamplate')?>/src/assets/img/avatar2.png"
+					class="card-img-top"
+					alt="Testing"
+					style="width: 10rem; display: block; margin: auto"
+				/>
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<br />
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content.
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- card end -->
 		<!--begin::Third Party Plugin(OverlayScrollbars)-->
 		<script
 			src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
