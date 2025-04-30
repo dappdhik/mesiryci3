@@ -2,9 +2,10 @@
 class Kasir extends CI_Controller{
     public function index(){
         $data   =   array(
-            'judul'     => 'Kasir Sederhana',
+            'judul'     => '',
             'footer'    => '@ Kasir Sederhana 2025',
             'halaman'   => 'pagedata/v_halaman',
+            'kasir'     => 'pagedata/v_kasir'
         );
         $this->load->view('v_tampilan', $data);
     }
