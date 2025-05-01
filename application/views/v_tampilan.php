@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--begin::Fonts-->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+			integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
+			crossorigin="anonymous"
+		/>
+		<!--end::Fonts-->
+		<!--begin::Third Party Plugin(OverlayScrollbars)-->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css"
+			integrity="sha256-tZHrRjVqNSRyWg2wbppGnT833E/Ys0DHWGwT04GiqQg="
+			crossorigin="anonymous"
+		/>
+		<!--end::Third Party Plugin(OverlayScrollbars)-->
+		<!--begin::Third Party Plugin(Bootstrap Icons)-->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+			integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI="
+			crossorigin="anonymous"
+		/>
+		<!--end::Third Party Plugin(Bootstrap Icons)-->
+		<!-- apexcharts -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+			integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
+			crossorigin="anonymous"
+		/>
+		<!-- jsvectormap -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
+			integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="<?= base_url('teamplate')?>/dist/css/adminlte.css"
+		/>
+		<title>Kasir</title>
+	</head>
+	<body>
+		<div class="navbar bg-body-secondary rounded-bottom ">
+			<!-- Menambahkan flex dan justify-center untuk menengahkan navbar -->
+			<div class="nav flex justify-center items-center container text-center">
+				<ul class="nav flex space-x-4 ">
+					<li class="m-1 p-2">
+						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
+							>Barang</a
+						>
+					</li>
+					<li class="m-1 p-2">
+						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
+							>Kasir</a
+						>
+					</li>
+					<li class="m-1 p-2">
+						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
+							>Riwayat</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- card start -->
+		<div class="container row">
+			<div class="card m-3" style="width: 18rem">
+				<img
+					src="<?= base_url('teamplate')?>/src/assets/img/avatar2.png"
+					class="card-img-top"
+					alt="Testing"
+					style="width: 10rem; display: block; margin: auto"
+				/>
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<br />
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content.
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card m-3" style="width: 18rem">
+				<img
+					src="<?= base_url('teamplate')?>/src/assets/img/avatar2.png"
+					class="card-img-top"
+					alt="Testing"
+					style="width: 10rem; display: block; margin: auto"
+				/>
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<br />
+					<p class="card-text">
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content.
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- card end -->
+		<!--begin::Third Party Plugin(OverlayScrollbars)-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
+			integrity="sha256-dghWARbRe2eLlIJ56wNB+b760ywulqK3DzZYEpsg2fQ="
+			crossorigin="anonymous"
+		></script>
+		<!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+			crossorigin="anonymous"
+		></script>
+		<!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+		<script src="<?= base_url('teamplate')?>/dist/js/adminlte.js"></script>
+		<!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+		<!-- <script> -->
+	</body>
+</html>
