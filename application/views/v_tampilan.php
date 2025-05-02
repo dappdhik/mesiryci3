@@ -45,71 +45,76 @@
 			rel="stylesheet"
 			href="<?= base_url('teamplate')?>/dist/css/adminlte.css"
 		/>
-		<title>Kasir</title>
+		<title>Kasir Sederhana</title>
 	</head>
 	<body>
-		<div class="navbar bg-body-secondary rounded-bottom ">
-			<!-- Menambahkan flex dan justify-center untuk menengahkan navbar -->
-			<div class="nav flex justify-center items-center container text-center">
-				<ul class="nav flex space-x-4 ">
-					<li class="m-1 p-2">
-						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
-							>Barang</a
-						>
-					</li>
-					<li class="m-1 p-2">
-						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
-							>Kasir</a
-						>
-					</li>
-					<li class="m-1 p-2">
-						<a href="" class="text-black fs-5 fw-semibold text-decoration-none"
-							>Riwayat</a
-						>
-					</li>
-				</ul>
-			</div>
-		</div>
+		
+		<!-- sidebar start -->
+		<!-- sidebar start -->
+<div class="container-fluid mt-3 ">
+    <div class="row">
 
-		<!-- card start -->
-		<div class="container row">
-			<div class="card m-3" style="width: 18rem">
-				<img
-					src="<?= base_url('teamplate')?>/src/assets/img/avatar2.png"
-					class="card-img-top"
-					alt="Testing"
-					style="width: 10rem; display: block; margin: auto"
-				/>
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<br />
-					<p class="card-text">
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
-					</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-			<div class="card m-3" style="width: 18rem">
-				<img
-					src="<?= base_url('teamplate')?>/src/assets/img/avatar2.png"
-					class="card-img-top"
-					alt="Testing"
-					style="width: 10rem; display: block; margin: auto"
-				/>
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<br />
-					<p class="card-text">
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
-					</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-		</div>
+        <!-- Sidebar -->
+        <div class="col-md-3 col-lg-2 bg-light shadow-sm p-0 ">
+            <div class="d-flex flex-column h-100 p-3 ">
+                <a href="<?= base_url('barang/index')?>" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
+                    <i class="bi bi-shop fs-4 me-2"></i>
+                    <span class="fs-4 fw-semibold">Heyin food</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column gap-2 ">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">
+						<ion-icon name="pizza-outline"></ion-icon>
+													Makanan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link link-dark">
+						<ion-icon name="beer-outline"></ion-icon>                            Minuman
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr>
+                <div class="mt-auto">
+                    <div class="nav-item">
+                        <a href="#" class="nav-link link-danger">
+                            <i class="bi bi-box-arrow-left me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="col-md-9 col-lg-10 ms-auto">
+            <!-- sidebar end -->
+			<div class="d-flex p-2" style="width: 50rem;">
+						<input type="text" placeholder="cari makanan dan minuman" class="form-control me-2"/>
+						<button class="btn btn-sm btn-primary" type="submit">Cari</button>
+						</div>
 
+            <div class="d-flex justify-content-between flex-grow-1" style="gap: 1rem;">
+                <div class="container1 flex-grow-1 bg-body" style="width: 60%; gap: 1rem; height: 80vh; overflow-y: scroll;">
+                    <?php if($halaman) {
+                        $this->load->view($halaman); 
+                    } ?>
+                </div>
+                <div class="container2 bg-body-tertiary shadow-sm" style="width: 30% ">
+                    <?php if($kasir) {
+                        $this->load->view($kasir); 
+                    } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 		<!-- card end -->
+		 <!-- iocons start -->
+		 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		 <!-- iocons end -->
 		<!--begin::Third Party Plugin(OverlayScrollbars)-->
 		<script
 			src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
@@ -134,3 +139,5 @@
 		<!-- <script> -->
 	</body>
 </html>
+
+<!-- cari -->
