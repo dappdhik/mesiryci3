@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="kumpulan  font-mono  bg-red-300 p-4 flex">
-        <h1 class="judul text-left text-3xl "><?php echo $judul?></h1>
+        <h1 class="judul text-left text-3xl "><php echo $judul?></h1>
         <div class="navbar">
             <ul class="anchor flex p-2">
                 <li class="m-2"><a href="">Beranda</a></li>
@@ -19,7 +19,7 @@
     </div>
     <hr>
     <footer class="text-center bagroun">
-        <?php echo $footer ?>
+        <php echo $footer ?>
     </footer>
 </body>
-</html>
+</html> -->
