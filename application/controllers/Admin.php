@@ -29,6 +29,18 @@ class admin extends CI_Controller{
         );
         $this->load->view('admin/v_admin', $data);
     }
+    public function tampiledit(){
+        $data   = array(
+            'halaman' => 'admin/v_edit',
+        );
+        $this->load->view('admin/v_admin', $data);
+    }
+    public function detail(){
+        $data   = array(
+            'halaman'   => 'admin/v_detail',
+        );
+        $this->load->view('admin/v_admin', $data);
+    }
 
 }
 ?>

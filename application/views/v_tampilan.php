@@ -51,18 +51,18 @@
 		
 		<!-- sidebar start -->
 		<!-- sidebar start mt-3 -->
-<div class="container-fluid ">
-    <div class="row">
+<div class="container-fluid " >
+    <div class="row" >
 
         <!-- Sidebar -->
-        <div class="col-md-3 col-lg-2 bg-light shadow-sm p-0 ">
-            <div class="d-flex flex-column h-100 p-3 mt-3">
+        <div class="col-md-3 col-lg-2 bg-light shadow-sm p-0 " >
+            <div class="d-flex flex-column h-100 p-3 mt-3" >
                 <a href="<?= base_url('barang/index')?>" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
                     <i class="bi bi-shop fs-4 me-2"></i>
                     <span class="fs-4 fw-semibold">Heyin food</span>
                 </a>
                 <hr>
-                <ul class="nav nav-pills flex-column gap-2 ">
+                <ul class="nav nav-pills flex-column gap-2 " >
                     <li class="nav-item">
                         <a href="<?= base_url('barang/makanan')?>" class="nav-link link-dark" aria-current="page">
 						<ion-icon name="pizza-outline"></ion-icon>

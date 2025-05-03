@@ -6,12 +6,19 @@
     <input type="text" class="form-control">
 </div>
 <div class="form-group">
+    <label for="" class="m-2">Harga</label>
+    <input type="text" class="form-control">
+</div>
+<div class="form-group">
     <label for="" class="m-2">Stok</label>
     <input type="text" class="form-control">
 </div>
 <div class="form-group">
-    <label for="" class="m-2">Harga</label>
-    <input type="text" class="form-control">
+    <label for="" class="m-2">Kategori</label>
+    <select name="" id="" class="form-selected form-control">
+        <option value="">Makanan</option>
+        <option value="">Minuman</option>
+    </select>
 </div>
 <button type="submit" class="btn btn-primary mt-4">Kirim</button></div>
 <!-- <div class="form-floating mb-3">
