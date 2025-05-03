@@ -50,13 +50,13 @@
 	<body>
 		
 		<!-- sidebar start -->
-		<!-- sidebar start -->
-<div class="container-fluid mt-3 ">
+		<!-- sidebar start mt-3 -->
+<div class="container-fluid ">
     <div class="row">
 
         <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 bg-light shadow-sm p-0 ">
-            <div class="d-flex flex-column h-100 p-3 ">
+            <div class="d-flex flex-column h-100 p-3 mt-3">
                 <a href="<?= base_url('barang/index')?>" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
                     <i class="bi bi-shop fs-4 me-2"></i>
                     <span class="fs-4 fw-semibold">Heyin food</span>
@@ -64,19 +64,27 @@
                 <hr>
                 <ul class="nav nav-pills flex-column gap-2 ">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="<?= base_url('barang/makanan')?>" class="nav-link link-dark" aria-current="page">
 						<ion-icon name="pizza-outline"></ion-icon>
 													Makanan
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark">
+                        <a href="<?= base_url('barang/minuman')?>" class="nav-link link-dark">
 						<ion-icon name="beer-outline"></ion-icon>                            Minuman
                         </a>
                     </li>
+
+					<hr>
+                    <li class="nav-item">
+                        <a href="<?= base_url('admin/index')?>" class="nav-link link-dark">
+						<!-- <ion-icon name="beer-outline"></ion-icon> -->
+						                           admin
+                        </a>
+                    </li>
+                    
                     
                 </ul>
-                <hr>
                 <div class="mt-auto">
                     <div class="nav-item">
                         <a href="#" class="nav-link link-danger">
@@ -106,6 +114,8 @@
                         $this->load->view($kasir); 
                     } ?>
                 </div>
+				<!-- admin start -->
+				<!-- admin end -->
             </div>
         </div>
     </div>

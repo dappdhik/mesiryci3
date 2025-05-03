@@ -1,6 +1,6 @@
 <!-- card start -->
 <div class="container row ">
-	<h3>Barang</h3>
+	<h3>all data</h3>
 			<div class="card m-2" style="width: 10rem">
 				<img
 					src="<?= base_url('gambar')?>/nasigoreng.jpeg"
@@ -158,3 +158,5 @@
 
 		</div>
 
+
+		<!-- ini adalah digunakan untuk tampilakn seluruh data -->
