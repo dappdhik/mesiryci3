@@ -1,6 +1,6 @@
 <!-- card start -->
 <div class="container row ">
-	<h3>Barang</h3>
+	<h3>all data</h3>
 			<div class="card m-2" style="width: 10rem">
 				<img
 					src="<?= base_url('gambar')?>/nasigoreng.jpeg"
@@ -14,7 +14,14 @@
 					<p class="card-text">
 						Rp 10.000
 					</p>
+					
 					<a href="#" class="btn btn-primary btn-sm">Pilih barang</a>
+					<!-- <div style="display: flex; align-items: center; gap: 10px;">
+  <button onclick="ubahNilai(-1)">-</button>
+  <input type="number" id="inputAngka" value="0" min="0" style="width: 60px; text-align: center;" readonly>
+  <button onclick="ubahNilai(1)">+</button>
+</div> -->
+
 
 				</div>
 				
@@ -158,3 +165,18 @@
 
 		</div>
 
+
+		<!-- ini adalah digunakan untuk tampilakn seluruh data -->
+
+		<!-- <script>
+  function ubahNilai(perubahan) {
+    let input = document.getElementById('inputAngka');
+    let nilaiSekarang = parseInt(input.value) || 0;
+    let nilaiBaru = nilaiSekarang + perubahan;
+
+    // Cegah nilai negatif
+    if (nilaiBaru < 0) nilaiBaru = 0;
+
+    input.value = nilaiBaru;
+  }
+</script> -->
