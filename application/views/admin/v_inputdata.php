@@ -18,7 +18,6 @@
     <select name="" id="" class="form-selected form-control">
         <option value="">Makanan</option>
         <option value="">Minuman</option>
-        <option value="">lainnya</option>
     </select>
 </div>
 <button type="submit" class="btn btn-primary mt-4">Kirim</button></div>
