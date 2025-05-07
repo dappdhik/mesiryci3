@@ -13,7 +13,7 @@
     <input type="text" class="form-control">
 </div>
 <div class="form-group">
-    <label for="">Gambar</label>
+    <label for="">Upload</label>
     <input type="file" class="form-control">
 </div>
 <button type="submit" class="btn btn-primary mt-4">Kirim</button></div>
