@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 01, 2025 at 06:12 AM
+-- Generation Time: May 07, 2025 at 01:49 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -89,6 +89,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `password`, `role`, `tanggal`) VALUES
+(1, 'wildan', '$2y$10$K7oPtbcFNdc42U/zLzXZounzvqdPTOsVrPPWUR.LvDH8QzfkN909q', 'admin', '2025-05-02 19:17:48'),
+(2, 'kasir1', '$2y$10$YmtwDsg3rNngSfQz9m/OseWauqn4wzfg4Y8.xzvNC05zXdoKM4cHe', 'kasir', '2025-05-02 19:38:18');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -157,7 +165,7 @@ ALTER TABLE `penjualan_detail`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
