@@ -60,7 +60,7 @@
 							class="d-flex align-items-center mb-3 text-decoration-none text-dark"
 						>
 							<i class="bi bi-shop fs-4 me-2"></i>
-							<span class="fs-4 fw-semibold">Heyin food</span>
+							<span class="fs-4 fw-semibold">Cames Food</span>
 						</a>
 						<hr />
 						<ul class="nav nav-pills flex-column gap-2">
