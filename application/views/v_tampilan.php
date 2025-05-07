@@ -59,7 +59,7 @@
             <div class="d-flex flex-column h-100 p-3 mt-3" >
                 <a href="<?= base_url('barang/index')?>" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
                     <i class="bi bi-shop fs-4 me-2"></i>
-                    <span class="fs-4 fw-semibold">winfood</span>
+                    <span class="fs-4 fw-semibold">Caser Food</span>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column gap-2 " >
@@ -98,7 +98,7 @@
         <!-- Main Content -->
         <div class="col-md-9 col-lg-10 ms-auto">
             <!-- sidebar end -->
-			<div class="d-flex p-2" style="width: 50rem;">
+			<div class="d-flex p-2" style="width: 45rem;">
 						<input type="text" placeholder="cari makanan dan minuman" class="form-control me-2"/>
 						<button class="btn btn-sm btn-primary" type="submit">Cari</button>
 						</div>
@@ -109,7 +109,7 @@
                         $this->load->view($halaman); 
                     } ?>
                 </div>
-                <div class="container2 bg-body-tertiary shadow-sm" style="width: 30% ">
+                <div class="container2 bg-body-tertiary shadow-sm " style="width: 30% ">
                     <?php if($kasir) {
                         $this->load->view($kasir); 
                     } ?>
