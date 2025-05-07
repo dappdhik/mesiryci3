@@ -59,7 +59,7 @@
             <div class="d-flex flex-column h-100 p-3 ">
                 <a href="<?= base_url('barang/index')?>" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
                     <i class="bi bi-shop fs-4 me-2"></i>
-                    <span class="fs-4 fw-semibold">Heyin food</span>
+                    <span class="fs-4 fw-semibold">winfood</span>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column gap-2 ">
