@@ -49,7 +49,7 @@
             <div class="d-flex flex-column h-100 p-3 mt-3" >
                 <a href="<?= base_url('barang/index')?>" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
                     <i class="bi bi-shop fs-4 me-2"></i>
-                    <span class="fs-4 fw-semibold">winfood</span>
+                    <span class="fs-4 fw-semibold">Cames Food</span>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column gap-2 " >
@@ -85,10 +85,12 @@
             </div>
         </div>
         <div class="col-md-9 col-lg-10 ms-auto">
+
             <div class="d-flex p-2" style="width: 50rem;">
                                 <input type="text" placeholder="cari makanan dan minuman" class="form-control me-2"/>
                                 <button class="btn btn-sm btn-primary" type="submit">Cari</button>
                                 </div>
+
 
             <div class="d-flex justify-content-between flex-grow-1" style="gap: 1rem;">
                 <div class="container1 flex-grow-1 bg-body" style="width: 60%; gap: 1rem; height: 80vh; overflow-y: scroll;">
@@ -96,11 +98,13 @@
                         $this->load->view($halaman, isset($data) ? $data : null);
                     } ?>
                 </div>
+
                 <div class="container2 bg-body-tertiary shadow-sm" style="width: 30% ">
                     <?php if(isset($kasir)) {
                         $this->load->view($kasir, isset($data) ? $data : null);
                     } else {
                         $this->load->view('pagedata/v_kasir'); // Load default kasir view if $kasir is not set
+
                     } ?>
                 </div>
                 </div>
