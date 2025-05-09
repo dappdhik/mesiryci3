@@ -91,7 +91,6 @@
                                 <button class="btn btn-sm btn-primary" type="submit">Cari</button>
                                 </div>
 
-
             <div class="d-flex justify-content-between flex-grow-1" style="gap: 1rem;">
                 <div class="container1 flex-grow-1 bg-body" style="width: 60%; gap: 1rem; height: 80vh; overflow-y: scroll;">
                     <?php if(isset($halaman)) {
@@ -99,7 +98,7 @@
                     } ?>
                 </div>
 
-                <div class="container2 bg-body-tertiary shadow-sm" style="width: 30% ">
+                <div class="container2 bg-body-tertiary shadow-sm" style="width: 40% ">
                     <?php if(isset($kasir)) {
                         $this->load->view($kasir, isset($data) ? $data : null);
                     } else {

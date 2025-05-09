@@ -17,8 +17,9 @@
 <div class="form-group">
     <label for="" class="m-2">Kategori</label>
     <select name="kategori" id="" class="form-selected form-control">
-        <option value="makanan">Makanan</option>
-        <option value="minuman">Minuman</option>
+        <option value="">----</option>
+        <option value="1">Makanan</option>
+        <option value="2">Minuman</option>
     </select>
 </div>
 <div class="form-group">
