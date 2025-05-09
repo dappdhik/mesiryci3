@@ -3,7 +3,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
 <div class="container row">
-    <h3>Daftar Makanan</h3>
+    <h3><i class="bi bi-egg-fried"></i>
+    Daftar Makanan</h3>
 
     <?php if (isset($makanan) && !empty($makanan)): ?>
         <?php foreach ($makanan as $item): ?>
@@ -22,6 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 <div class="card-body">
                     <h5 class="card-title"><?= htmlspecialchars($item->nama_barang) ?></h5>
+                    <br>
                     <p class="card-text">
                         Rp <?= number_format($item->harga, 0, ',', '.') ?>
                     </p>
