@@ -9,15 +9,14 @@ class Barang extends CI_Controller
         $this->load->model('Barang_model');
     }
 
-    public function index()
-    {
+       public function index() {
         $data = array(
             'halaman' => 'pagedata/v_barang',
-            'kasir' => 'pagedata/v_kasir',
-            'mhs' => $this->Barang_model->barangsemua(),
+            'mhs' => $this->Barang_model->get_all_barang() 
         );
         $this->load->view('v_tampilan', $data);
     }
+
 
     public function makanan()
     {

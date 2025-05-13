@@ -56,29 +56,29 @@
                     <li class="nav-item">
                         <a href="<?= base_url('barang/makanan')?>" class="nav-link link-dark" aria-current="page">
                         <ion-icon name="pizza-outline"></ion-icon>
-                                                        Makanan
+                        Makanan
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('barang/minuman')?>" class="nav-link link-dark">
-                        <ion-icon name="beer-outline"></ion-icon>                                     Minuman
+                            <ion-icon name="beer-outline"></ion-icon>                                     
+                            Minuman
                         </a>
                     </li>
 
                     <hr>
-                    <li class="nav-item">
-                        <a href="<?= base_url('admin/index')?>" class="nav-link link-dark">
-                            admin
-                        </a>
-                    </li>
-
-
-
+                    
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/index')?>" class="nav-link link-dark">
+                                Admin Dashboard
+                            </a>
+                        </li>
+                    
                 </ul>
 
                 <div class="mt-auto">
                     <div class="nav-item">
-                        <a href="#" class="nav-link link-danger">
+                        <a href="<?= base_url('auth/logout') ?>" class="nav-link link-danger" onclick="return confirm('Yakin ingin logout?')">
                             <i class="bi bi-box-arrow-left me-2"></i>
                             Logout
                         </a>

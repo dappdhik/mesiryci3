@@ -9,10 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
-    <?php if(isset($mhs) && is_array($mhs) && !empty($mhs)): ?>
+    <?php if(isset($mhs) && !empty($mhs)): ?>
         <?php foreach($mhs as $item): ?>
             <div class="col">
-                <div class="card h-100 shadow-sm" id="allCard-<?= $item->id_barang ?>" data-item-id="<?= $item->id_barang ?>">
+                <div class="card h-100 shadow-sm" id="allCard-<?= $item->id_barang ?>">
                     <?php if (!empty($item->gambar_barang)): ?>
                         <img src="data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>"
                              class="card-img-top p-3"
@@ -34,7 +34,7 @@
                                 <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(this, 1)">+</button>
                             </div>
                             <button class="btn btn-primary btn-sm w-100"
-                                    onclick="addToOrder(<?= $item->id_barang ?>, '<?= htmlspecialchars($item->nama_barang) ?>', <?= $item->harga ?>, 'data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>')">
+                                    onclick="addToOrder(<?= $item->id_barang ?>, '<?= htmlspecialchars($item->nama_barang) ?>', <?= $item->harga ?>, '<?= !empty($item->gambar_barang) ? 'data:image/jpeg;base64,'.base64_encode($item->gambar_barang) : base_url('gambar/default.jpg') ?>')">
                                 Pilih
                             </button>
                         </div>
@@ -50,8 +50,7 @@
 </div>
 
 <script>
-    function updateQuantity
-    (btn, change) {
+    function updateQuantity(btn, change) {
         const input = btn.closest('.input-group').querySelector('.quantity-input');
         let newVal = parseInt(input.value) + change;
         if (newVal < 0) newVal = 0;
