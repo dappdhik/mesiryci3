@@ -3,8 +3,8 @@
 <div class="container-row d-flex flex-row flex-nowrap overflow-auto">
     <?php if(isset($barang) && !empty($barang)): ?>
         <?php foreach($barang as $item): ?>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
+        <div class="col" >
+            <div class="card h-100 shadow-sm" >
                     <?php if (!empty($item->gambar_barang)): ?>
                         <img src="data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>"
                              class="card-img-top p-3"
