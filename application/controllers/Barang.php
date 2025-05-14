@@ -48,7 +48,6 @@ class Barang extends CI_Controller
             'id_kategori' => $this->input->post('kategori') // Tambahkan kategori
         );
         
-        
         // Tambahkan proses insert
         $this->Barang_model->tambah_barang($data);
         redirect('barang'); // Redirect setelah input

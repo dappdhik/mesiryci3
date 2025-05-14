@@ -56,29 +56,30 @@
                     <li class="nav-item">
                         <a href="<?= base_url('barang/makanan')?>" class="nav-link link-dark" aria-current="page">
                         <ion-icon name="pizza-outline"></ion-icon>
-                                                        Makanan
+                        Makanan
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('barang/minuman')?>" class="nav-link link-dark">
-                        <ion-icon name="beer-outline"></ion-icon>                                     Minuman
+                            <ion-icon name="beer-outline"></ion-icon>                                     
+                            Minuman
                         </a>
                     </li>
 
                     <hr>
-                    <li class="nav-item">
-                        <a href="<?= base_url('admin/index')?>" class="nav-link link-dark">
-                            admin
-                        </a>
-                    </li>
 
 
-
+                    
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/index')?>" class="nav-link link-dark">
+                                Admin Dashboard masih no session
+                            </a>
+                        </li>
                 </ul>
 
                 <div class="mt-auto">
                     <div class="nav-item">
-                        <a href="#" class="nav-link link-danger">
+                        <a href="<?= base_url('auth/logout') ?>" class="nav-link link-danger" onclick="return confirm('Yakin ingin logout?')">
                             <i class="bi bi-box-arrow-left me-2"></i>
                             Logout
                         </a>
@@ -87,12 +88,14 @@
             </div>
         </div>
 
+
         <div class="col-md-9 col-lg-10 ms-auto">
 
             <div class="d-flex p-2" style="width: 50rem;">
                                 <input type="text" placeholder="cari makanan dan minuman" class="form-control me-2"/>
                                 <button class="btn btn-sm btn-primary" type="submit">Cari</button>
                                 </div>
+
 
             <div class="d-flex justify-content-between flex-grow-1" style="gap: 1rem;">
                 <div class="container1 flex-grow-1 bg-body" style="width: 60%; gap: 1rem; height: 80vh; overflow-y: scroll;">
@@ -101,7 +104,7 @@
                     } ?>
                 </div>
 
-                <div class="container2 bg-body-tertiary shadow-sm" style="width: 40% ">
+                <div class="container2 bg-body-tertiary shadow-sm" style="width: 30% ">
                     <?php if(isset($kasir)) {
                         $this->load->view($kasir, isset($data) ? $data : null);
                     } else {

@@ -1,34 +1,30 @@
 <h2 class="p-2">Inputan data</h2>
 
-<?php echo form_open('barang/inputb')?>
-<div class="container p-3" style="">
-    <div class="form-group ">
-        <label for="" class="m-2">Nama barang</label>
-    <input type="text" class="form-control" name="nama">
+<?php echo form_open_multipart('admin/inputb')?>
+<div class="container p-3">
+    <div class="form-group mb-3">
+        <label for="nama" class="m-2">Nama barang</label>
+        <input type="text" class="form-control" name="nama" id="nama" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="harga" class="m-2">Harga</label>
+        <input type="number" class="form-control" name="harga" id="harga" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="stok" class="m-2">Stok</label>
+        <input type="number" class="form-control" name="stok" id="stok" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="kategori" class="m-2">Kategori</label>
+        <select name="kategori" id="kategori" class="form-select form-control" required>
+            <option value="makanan">Makanan</option>
+            <option value="minuman">Minuman</option>
+        </select>
+    </div>
+    <div class="form-group mb-3">
+        <label for="gambar" class="m-2">Upload Gambar</label>
+        <input type="file" class="form-control" name="gambar" id="gambar">
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Kirim</button>
 </div>
-<div class="form-group">
-    <label for="" class="m-2">Harga</label>
-    <input type="text" class="form-control" name="harga">
-</div>
-<div class="form-group">
-    <label for="" class="m-2">Stok</label>
-    <input type="text" class="form-control" name="stok">
-</div>
-<div class="form-group">
-    <label for="" class="m-2">Kategori</label>
-    <select name="kategori" id="" class="form-selected form-control">
-        <option value="">----</option>
-        <option value="1">Makanan</option>
-        <option value="2">Minuman</option>
-    </select>
-</div>
-<div class="form-group">
-    <label for="" class="m-2">Upload</label>
-    <input type="file" class="form-control" name="gambar">
-</div>
-<button type="submit" class="btn btn-primary mt-4">Kirim</button></div>
 <?php echo form_close()?>
-<!-- <div class="form-floating mb-3">
-    <input type="text" id="floatingInput"  class="form-control">
-    <label for="floatingInput" class="">Nama barang</label>
-</div> -->

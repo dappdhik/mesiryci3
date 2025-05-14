@@ -53,3 +53,14 @@ $route['auth/login'] = 'auth/login'; // Untuk halaman login
 $route['default_controller'] = 'auth/login'; // Menetapkan halaman login sebagai halaman default
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['admin'] = 'admin/index';
+$route['admin/makanan'] = 'admin/makanan';
+$route['admin/minuman'] = 'admin/minuman';
+$route['admin/delete/(:num)'] = 'admin/delete/$1';
+$route['admin/tampiledit/(:num)'] = 'admin/tampiledit/$1';
+$route['admin/detail/(:num)'] = 'admin/detail/$1';
+$route['admin/inputb'] = 'admin/inputb';
+
+$route['barang'] = 'barang/index';
+$route['barang/makanan'] = 'barang/makanan';
+$route['barang/minuman'] = 'barang/minuman';
