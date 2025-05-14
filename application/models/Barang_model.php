@@ -17,7 +17,7 @@
 
 //     public function get_by_kategori($id_kategori)
 //     {
-//         return $this->db->where('id_kategori', $id_kategori)
+//         return $this->db->where('id_kategori', $id_kategori) 
 //             ->get('barang')
 //             ->result();
 //     }
