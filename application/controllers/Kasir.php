@@ -18,7 +18,7 @@ class Kasir extends CI_Controller
         $data = array(
             'halaman' => 'pagedata/v_barang',
             'kasir' => 'pagedata/v_kasir',
-            'mhs' => $this->Barang_model->barangsemua() // Kirim data ke view
+            'mhs' => $this->Barang_model->get_all_barang() // Kirim data ke view
         );
         $this->load->view('v_tampilan', $data);
     }

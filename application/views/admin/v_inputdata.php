@@ -1,6 +1,6 @@
 <h2 class="p-2">Inputan data</h2>
 
-<?php echo form_open_multipart('admin/inputb')?>
+<?php echo form_open_multipart('barang/inputb')?>
 <div class="container p-3">
     <div class="form-group mb-3">
         <label for="nama" class="m-2">Nama barang</label>
