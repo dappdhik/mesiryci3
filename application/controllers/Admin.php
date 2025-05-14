@@ -45,6 +45,7 @@ class admin extends CI_Controller{
     }
     public function detail($id_barang){
         $data   = array(
+            
             'halaman'   => 'admin/v_detail',
         );
         $this->load->view('admin/v_admin', $data);

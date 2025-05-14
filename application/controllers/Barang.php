@@ -48,6 +48,7 @@ class Barang extends CI_Controller
             'harga' => $this->input->post('harga'),
             'kategori' => $this->input->post('kategori'), // Tambahkan kategori
             // 'gambar'    => $this->input->post('gambar'),
+
         );
         
         // Tambahkan proses insert

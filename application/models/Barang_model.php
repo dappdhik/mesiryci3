@@ -27,11 +27,15 @@ class Barang_model extends CI_Model {
     public function ambil_makanan(){
         $this->db->select('*');
         $this->db->from('barang');
+        $this->db->where('kategori', 'makanan');    //mengambil makanan
+        return $this->db->get()->result();
 
     }
     public function ambil_minuman(){
         $this->db->select('*');
         $this->db->from('barang');
+        $this->db->where('kategori', 'minuman');
+        return $this->db->get()->result();
     }
 
 }

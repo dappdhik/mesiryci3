@@ -11,17 +11,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
             <?php foreach($minuman as $item): ?>
                 <div class="col">
-                    <div class="card h-100 shadow-sm" id="drinkCard-<?= $item->id_barang ?>" data-item-id="<?= $item->id_barang ?>">
+                    <div class="card shadow-sm" id="drinkCard-<?= $item->id_barang ?>" data-item-id="<?= $item->id_barang ?>">
                         <?php if (!empty($item->gambar_barang)): ?>
                             <img src="data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>"
                                  class="card-img-top p-3"
                                  alt="<?= htmlspecialchars($item->nama_barang) ?>"
                                  style="height: 180px; object-fit: contain;">
                         <?php else: ?>
-                            <img src="<?= base_url('gambar/default-drink.jpg') ?>"
+                            <img src="<?= base_url('gambar/default1.jpg') ?>"
                                  class="card-img-top p-3"
                                  alt="Default drink image"
                                  style="height: 180px; object-fit: contain;">
+                                <span class="text-muted m-2" style="font-size: 0.75rem;">Gambar tidak ada</span>
+
                         <?php endif; ?>
 
                         <div class="card-body d-flex flex-column">
