@@ -20,12 +20,14 @@ class admin extends CI_Controller{
     public function makanan(){
         $data   = array(
             'halaman'   => 'pagedata/v_makanan',
+            'makanan'   => $this->Barang_model->ambil_makanan(),
         );
         $this->load->view('admin/v_admin', $data);
     }
     public function minuman(){
         $data   = array(
             'halaman'   => 'pagedata/v_minuman',
+            'minuman'   => $this->Barang_model->ambil_minuman(),
         );
         $this->load->view('admin/v_admin', $data);
     }
@@ -37,16 +39,17 @@ class admin extends CI_Controller{
         );
         $this->load->view('admin/v_admin', $data);
     }
-    public function tampiledit(){
+    public function tampiledit($id_barang){
         $data   = array(
             'halaman' => 'admin/v_edit',
+            'barang'    => $this->Barang_model->Get_barang_by_id($id_barang),
         );
         $this->load->view('admin/v_admin', $data);
     }
     public function detail($id_barang){
         $data   = array(
-            
             'halaman'   => 'admin/v_detail',
+            'barang'    => $this->Barang_model->Get_barang_by_id($id_barang),
         );
         $this->load->view('admin/v_admin', $data);
     }
@@ -63,6 +66,20 @@ class admin extends CI_Controller{
     }
         // Redirect kembali ke halaman admin atau daftar barang
     redirect('admin');
+    }
+
+    //update barang
+    public function update_barang($id_barang){
+        $data = array(
+            'id_barang'     => $id_barang,
+            'nama_barang'   => $this->input->post('nama_barang'),
+            'stok'          => $this->input->post('stok'),
+            'harga'         => $this->input->post('harga'),
+            'kategori'      => $this->input->post('kategor'),
+
+        );
+        $this->Barang_model->update_data($data);
+        redirect('admin');
     }
 
 }

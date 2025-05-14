@@ -9,8 +9,8 @@ class Barang_model extends CI_Model {
     }
 
     //untuk detail
-    public function get_barang_by_id($id) {
-        return $this->db->where('id_barang', $id)
+    public function get_barang_by_id($id_barang) {
+        return $this->db->where('id_barang', $id_barang)
             ->get('barang')
             ->row();
     }
@@ -38,4 +38,10 @@ class Barang_model extends CI_Model {
         return $this->db->get()->result();
     }
 
+    //update data
+    public function update_data($data){
+        $this->db->where('id_barang', $data['id_barang']);
+        //update data 
+        $this->db->update('barang', $data);
+    }
 }
