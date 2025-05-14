@@ -69,14 +69,12 @@
                     <hr>
 
 
-
                     
                         <li class="nav-item">
                             <a href="<?= base_url('admin/index')?>" class="nav-link link-dark">
                                 Admin Dashboard masih no session
                             </a>
                         </li>
-                    
                 </ul>
 
                 <div class="mt-auto">
