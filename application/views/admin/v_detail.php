@@ -13,5 +13,8 @@
                              class="card-img-top p-3 rounded"
                              alt="Default image"
                              style="width: 250px; object-fit: cover;">
-
+<br>
+                             <a href="<?= base_url('admin') ?>" class="btn btn-secondary mt-4 ms-2">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
 <!-- <img src="<= base_url('gambar')?>/nasigoreng.jpeg" alt="gambar data" class="rounded"></div></div> -->

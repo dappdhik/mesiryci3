@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <?php foreach ($makanan as $item): ?>
             <div class="card m-2" style="width: 12rem;" id="foodCard-<?= $item->id_barang ?>" data-item-id="<?= $item->id_barang ?>">
                 <?php if (!empty($item->gambar_barang)): ?>
-                    <img src="data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>"
+                    <img src="<?= base_url('uploadsgambar/'),$item->gambar_barang ?>"
                          class="card-img-top p-2"
                          alt="<?= htmlspecialchars($item->nama_barang) ?>"
                          style="height: 120px; object-fit: cover;">

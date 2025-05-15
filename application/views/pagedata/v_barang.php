@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="card h-100 shadow-sm" id="allCard-<?= $item->id_barang ?>">
                     <?php if (!empty($item->gambar_barang)): ?>
-                        <img src="data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>"
+                        <img src="<?= base_url('uploadsgambar/'),$item->gambar_barang ?>"
                              class="card-img-top p-3"
                              alt="<?= htmlspecialchars($item->nama_barang) ?>"
                              style="height: 120px; object-fit: contain;">
@@ -29,11 +29,7 @@
                         <h6 class="card-title"><?= htmlspecialchars($item->nama_barang) ?></h6>
                         <p class="card-text text-success fw-bold">Rp <?= number_format($item->harga, 0, ',', '.') ?></p>
                         <div class="mt-auto">
-                            <div class="input-group input-group-sm mb-2">
-                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(this, -1)">-</button>
-                                <input type="number" class="form-control text-center quantity-input" value="0" min="0" readonly>
-                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(this, 1)">+</button>
-                            </div>
+                            
                             <button class="btn btn-primary btn-sm w-100"
                                     onclick="addToOrder(<?= $item->id_barang ?>, '<?= htmlspecialchars($item->nama_barang) ?>', <?= $item->harga ?>, '<?= !empty($item->gambar_barang) ? 'data:image/jpeg;base64,'.base64_encode($item->gambar_barang) : base_url('gambar/default.jpg') ?>')">
                                 Pilih

@@ -8,7 +8,7 @@
         <div class="" >
             <div class="card h-100 shadow-sm m-1" >
                     <?php if (!empty($item->gambar_barang)): ?>
-                        <img src="data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>"
+                        <img src="<?= base_url('uploadsgambar/'),$item->gambar_barang ?>"
                              class="card-img-top p-3"
                              alt="<?= htmlspecialchars($item->nama_barang) ?>"
                              style="height: 120px; object-fit: cover;">
@@ -17,6 +17,7 @@
                              class="card-img-top p-3"
                              alt="Default image"
                              style="height: 120px; object-fit: cover;">
+                            <span class="text-muted m-2" style="font-size: 0.75rem;">Gambar tidak ada</span>
                     <?php endif; ?>
                     <div class="card-body">
                         <h5 class="card-title"><?= htmlspecialchars($item->nama_barang) ?></h5>

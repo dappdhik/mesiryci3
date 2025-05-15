@@ -15,8 +15,8 @@ class Barang_model extends CI_Model {
             ->row();
     }
 
-    public function tambah_barang($data) {
-        return $this->db->insert('barang', $data);
+    public function tambah_barang($form) {
+        return $this->db->insert('barang', $form);
     }
 
     //untuk menghapus data
