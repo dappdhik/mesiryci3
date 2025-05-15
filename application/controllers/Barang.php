@@ -24,8 +24,7 @@ class Barang extends CI_Controller
         $data = array(
             'halaman' => 'pagedata/v_makanan',
             'kasir' => 'pagedata/v_kasir',
-            // 'makanan' => $this->Barang_model->get_by_kategori(1) // Kategori 1 untuk makanan
-            'makanan'   => $this->Barang_model->ambil_makanan(),
+            'makanan'   => $this->Barang_model->ambil_makanan(),    //mengambil kategori makanan
         );
         $this->load->view('v_tampilan', $data);
     }
@@ -35,7 +34,7 @@ class Barang extends CI_Controller
         $data = array(
             'halaman' => 'pagedata/v_minuman',
             'kasir' => 'pagedata/v_kasir',
-            'minuman' => $this->Barang_model->ambil_minuman(), // Kategori 2 untuk minuman
+            'minuman' => $this->Barang_model->ambil_minuman(), // mengambil kategori minuman
         );
         $this->load->view('v_tampilan', $data);
     }

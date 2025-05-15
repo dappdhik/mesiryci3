@@ -1,9 +1,11 @@
 <h1 class="m-2">Semua data yang ada ditampilkan disini</h1>
 
-<div class="container-row d-flex flex-row flex-nowrap overflow-auto">
+<!-- overflow-auto -->
+
+<div class="d-flex flex-row   " style="height: 20rem;">
     <?php if(isset($barang) && !empty($barang)): ?>
         <?php foreach($barang as $item): ?>
-        <div class="col" >
+        <div class="" >
             <div class="card h-100 shadow-sm m-1" >
                     <?php if (!empty($item->gambar_barang)): ?>
                         <img src="data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>"
@@ -11,7 +13,7 @@
                              alt="<?= htmlspecialchars($item->nama_barang) ?>"
                              style="height: 120px; object-fit: cover;">
                     <?php else: ?>
-                        <img src="<?= base_url('gambar/default.jpg') ?>"
+                        <img src="<?= base_url('gambar/default1.jpg') ?>"
                              class="card-img-top p-3"
                              alt="Default image"
                              style="height: 120px; object-fit: cover;">
@@ -21,18 +23,18 @@
                         <br>
                         <p class="card-text">Rp <?= number_format($item->harga, 0, ',', '.') ?></p>
                         <p class="card-text">Stok: <?= $item->stok ?></p>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between  m-1">
                             <a href="<?= base_url('admin/delete/'.$item->id_barang) ?>" 
-                               class="btn btn-danger btn-sm"
+                               class="btn btn-danger btn-sm m-1"
                                onclick="return confirm('Yakin hapus <?= htmlspecialchars($item->nama_barang) ?>?')">
                                 <i class="bi bi-trash"></i> Delete
                             </a>
                             <a href="<?= base_url('admin/tampiledit/'.$item->id_barang) ?>" 
-                               class="btn btn-secondary btn-sm">
+                               class="btn btn-secondary btn-sm m-1">
                                 <i class="bi bi-pencil"></i> Edit
                             </a>
                             <a href="<?= base_url('admin/detail/'.$item->id_barang) ?>" 
-                               class="btn btn-info btn-sm">
+                               class="btn btn-info btn-sm m-1">
                                 <i class="bi bi-info-circle"></i> Detail
                             </a>
                         </div>
