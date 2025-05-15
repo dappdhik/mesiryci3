@@ -116,13 +116,13 @@
 							</li>
 						</ul>
 						<div class="mt-auto">
-							<div class="nav-item">
-								<a href="#" class="nav-link link-danger">
-									<i class="bi bi-box-arrow-left me-2"></i>
-									Logout
-								</a>
-							</div>
-						</div>
+                    <div class="nav-item">
+                        <a href="<?= base_url('auth/logout') ?>" class="nav-link link-danger" onclick="return confirm('Yakin ingin logout?')">
+                            <i class="bi bi-box-arrow-left me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
 					</div>
 				</div>
 				<!-- Main Content -->
