@@ -2,7 +2,7 @@
 
 <!-- overflow-auto -->
 
-<div class="d-flex flex-row   " style="height: 20rem;">
+<div class="d-flex flex-row flex-wrap  " style="height: 20rem;">
     <?php if(isset($barang) && !empty($barang)): ?>
         <?php foreach($barang as $item): ?>
         <div class="" >
@@ -11,13 +11,12 @@
                         <img src="<?= base_url('uploadsgambar/'),$item->gambar_barang ?>"
                              class="card-img-top p-3"
                              alt="<?= htmlspecialchars($item->nama_barang) ?>"
-                             style="height: 120px; object-fit: cover;">
+                             style="height: 200px; object-fit: cover;">
                     <?php else: ?>
                         <img src="<?= base_url('gambar/default1.jpg') ?>"
                              class="card-img-top p-3"
                              alt="Default image"
-                             style="height: 120px; object-fit: cover;">
-                            <span class="text-muted m-2" style="font-size: 0.75rem;">Gambar tidak ada</span>
+                             style="height: 200px; object-fit: cover;">
                     <?php endif; ?>
                     <div class="card-body">
                         <h5 class="card-title"><?= htmlspecialchars($item->nama_barang) ?></h5>

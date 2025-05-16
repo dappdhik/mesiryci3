@@ -15,7 +15,7 @@
                 <div class="card h-100 shadow-sm" id="allCard-<?= $item->id_barang ?>">
                     <?php if (!empty($item->gambar_barang)): ?>
                         <img src="<?= base_url('uploadsgambar/'),$item->gambar_barang ?>"
-                             class="card-img-top p-3"
+                             class="card-img-top p-3 "
                              alt="<?= htmlspecialchars($item->nama_barang) ?>"
                              style="height: 120px; object-fit: contain;">
                     <?php else: ?>
@@ -23,7 +23,7 @@
                              class="card-img-top p-3"
                              alt="Default image"
                              style="height: 120px; object-fit: contain;">
-                             <span class="text-muted m-2" style="font-size: 0.75rem;">Gambar tidak ada</span>
+                             
                     <?php endif; ?>
                     <div class="card-body d-flex flex-column">
                         <h6 class="card-title"><?= htmlspecialchars($item->nama_barang) ?></h6>
