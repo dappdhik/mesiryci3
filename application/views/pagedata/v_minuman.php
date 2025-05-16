@@ -20,7 +20,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                          class="card-img-top p-2"
                          alt="Default food image"
                          style="height: 120px; object-fit: cover;">
-                        <span class="text-muted m-2" style="font-size: 0.75rem;">Gambar tidak ada</span>
 
                 <?php endif; ?>
 
