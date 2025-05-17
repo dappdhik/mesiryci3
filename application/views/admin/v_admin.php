@@ -97,7 +97,7 @@
                     </li> -->
 							<!-- link crud start -->
 							<li class="nav-item">
-								<a href="tampilinput" class="nav-link link-dark">
+								<a href="<?= base_url('admin/tampilinput')?>" class="nav-link link-dark">
 									Tambah data
 								</a>
 							</li>
