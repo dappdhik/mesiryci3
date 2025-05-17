@@ -5,21 +5,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <div class="container row">
     <h3><i class="bi bi-egg-fried"></i>
-    Daftar Minuman</h3>
+        Daftar Minuman</h3>
 
     <?php if (isset($minuman) && !empty($minuman)): ?>
         <?php foreach ($minuman as $item): ?>
             <div class="card m-2" style="width: 12rem;" id="foodCard-<?= $item->id_barang ?>" data-item-id="<?= $item->id_barang ?>">
                 <?php if (!empty($item->gambar_barang)): ?>
-                    <img src="<?= base_url('uploadsgambar/'),$item->gambar_barang ?>"
-                         class="card-img-top p-2"
-                         alt="<?= htmlspecialchars($item->nama_barang) ?>"
-                         style="height: 120px; object-fit: cover;">
+                    <img src="<?= base_url('uploadsgambar/'), $item->gambar_barang ?>"
+                        class="card-img-top p-2"
+                        alt="<?= htmlspecialchars($item->nama_barang) ?>"
+                        style="height: 120px; object-fit: cover;">
                 <?php else: ?>
                     <img src="<?= base_url('gambar/default1.jpg') ?>"
-                         class="card-img-top p-2"
-                         alt="Default food image"
-                         style="height: 120px; object-fit: cover;">
+                        class="card-img-top p-2"
+                        alt="Default food image"
+                        style="height: 120px; object-fit: cover;">
 
                 <?php endif; ?>
 
@@ -37,7 +37,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity(this, 1)">+</button>
                         </div> -->
                         <button class="btn btn-sm btn-primary"
-                                onclick="addToOrder(<?= $item->id_barang ?>, '<?= htmlspecialchars($item->nama_barang) ?>', <?= $item->harga ?>, 'data:image/jpeg;base64,<?= base64_encode($item->gambar_barang) ?>')">
+                            onclick="addToOrder(
+            <?= $item->id_barang ?>, 
+            '<?= htmlspecialchars($item->nama_barang) ?>', 
+            <?= $item->harga ?>, 
+            '<?= base_url('uploadsgambar/' . $item->gambar_barang) ?>'
+        )">
                             Pilih
                         </button>
                     </div>
