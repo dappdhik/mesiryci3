@@ -58,13 +58,10 @@ class admin extends CI_Controller{
          $deleted = $this->Barang_model->delete_barang($id_barang);
 
     if ($deleted) {
-        // Jika berhasil hapus, beri flashdata sukses
         $this->session->set_flashdata('success', 'Barang berhasil dihapus.');
     } else {
-        // Jika gagal hapus
         $this->session->set_flashdata('error', 'Gagal menghapus barang.');
     }
-        // Redirect kembali ke halaman admin atau daftar barang
     redirect('admin');
     }
 
