@@ -19,14 +19,14 @@ class admin extends CI_Controller{
     // tampilan start
     public function makanan(){
         $data   = array(
-            'halaman'   => 'pagedata/v_makanan',
+            'halaman'   => 'admin/kategori/v_makanan',
             'makanan'   => $this->Barang_model->ambil_makanan(),
         );
         $this->load->view('admin/v_admin', $data);
     }
     public function minuman(){
         $data   = array(
-            'halaman'   => 'pagedata/v_minuman',
+            'halaman'   => 'admin/kategori/v_minuman',
             'minuman'   => $this->Barang_model->ambil_minuman(),
         );
         $this->load->view('admin/v_admin', $data);
