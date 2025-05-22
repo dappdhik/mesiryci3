@@ -33,7 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <!-- <div class="btn-group">
                             <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity(this, -1)">-</button>
                             <input type="number" class="form-control form-control-sm text-center"
-                                   value="0" min="0" style="width: 40px;" readonly>
+                                value="0" min="0" style="width: 40px;" readonly>
                             <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity(this, 1)">+</button>
                         </div> -->
                         <button class="btn btn-sm btn-primary"
