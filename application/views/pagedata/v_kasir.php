@@ -55,7 +55,7 @@
     let orderCounter = 1;
 
     function addToOrder(itemId, nama, harga, gambar) {
-        if(orders.length === 0) {
+        if (orders.length === 0) {
             $('#emptyRow').hide();
         }
 
@@ -63,7 +63,7 @@
         const quantityInput = $(`#foodCard-${itemId} input[type="number"]`);
         const qty = quantityInput ? parseInt(quantityInput.val()) || 1 : 1;
 
-        if(existingItem) {
+        if (existingItem) {
             existingItem.qty += qty;
             existingItem.subtotal = existingItem.qty * existingItem.harga;
         } else {
@@ -78,7 +78,7 @@
             });
         }
 
-        if(quantityInput) quantityInput.val(0);
+        if (quantityInput) quantityInput.val(0);
 
         updateOrderDisplay();
     }
@@ -124,7 +124,7 @@
         $('#totalHarga, #totalPay').text('Rp ' + total.toLocaleString('id-ID'));
         $('#payButton').prop('disabled', orders.length === 0);
 
-        if(orders.length > 0) {
+        if (orders.length > 0) {
             let infoHtml = '';
             orders.forEach(item => {
                 infoHtml += `
@@ -149,9 +149,9 @@
 
     function updateQty(itemId, change) {
         const item = orders.find(item => item.id === itemId);
-        if(item) {
+        if (item) {
             const newQty = item.qty + change;
-            if(newQty > 0) {
+            if (newQty > 0) {
                 item.qty = newQty;
                 item.subtotal = item.qty * item.harga;
                 updateOrderDisplay();
@@ -161,7 +161,7 @@
 
     function updateItemQty(itemId, newQty) {
         const item = orders.find(item => item.id === itemId);
-        if(item && newQty > 0) {
+        if (item && newQty > 0) {
             item.qty = parseInt(newQty);
             item.subtotal = item.qty * item.harga;
             updateOrderDisplay();
@@ -173,12 +173,54 @@
         updateOrderDisplay();
     }
 
-    $('#payButton').click(function() {
-        if(orders.length > 0) {
-            alert(`Total pembayaran: Rp ${$('#totalPay').text()}\n\nPesanan berhasil diproses!`);
-            orders = [];
-            orderCounter = 1;
-            updateOrderDisplay();
-        }
-    });
+$('#payButton').click(function() {
+    if (orders.length > 0) {
+        const namaKasir = '<?= $this->session->userdata('username') ?? 'Kasir' ?>';
+        
+        // Disable button untuk mencegah double click
+        $(this).prop('disabled', true).html('<i class="bi bi-hourglass-split"></i> Memproses...');
+        
+        $.ajax({
+            url: '<?= base_url('penjualan/simpan') ?>',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                total: orders.reduce((t, i) => t + i.subtotal, 0),
+                kasir: namaKasir,
+                items: orders
+            }),
+            success: function(res) {
+                if (res.status === 'success') {
+                    alert("Transaksi berhasil disimpan!");
+                    orders = [];
+                    orderCounter = 1;
+                    updateOrderDisplay();
+                } else {
+                    alert('Gagal menyimpan transaksi: ' + (res.message || 'Unknown error'));
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', xhr.responseText);
+                let errorMsg = 'Terjadi kesalahan saat menyimpan transaksi.';
+                
+                try {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.message) {
+                        errorMsg = response.message;
+                    }
+                } catch (e) {
+                    // Jika tidak bisa parse JSON, gunakan pesan default
+                }
+                
+                alert(errorMsg);
+            },
+            complete: function() {
+                // Re-enable button
+                $('#payButton').prop('disabled', orders.length === 0)
+                    .html('<i class="bi bi-credit-card"></i> Bayar (Rp <span id="totalPay">' + 
+                          (orders.reduce((t, i) => t + i.subtotal, 0)).toLocaleString('id-ID') + '</span>)');
+            }
+        });
+    }
+});
 </script>
