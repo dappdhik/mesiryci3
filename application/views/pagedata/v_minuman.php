@@ -1,65 +1,57 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 ?>
 
-<div class="container row">
-    <h3><i class="bi bi-egg-fried"></i>
-        Daftar Minuman</h3>
+<div class="container py-4">
+    <h2 class="mb-4 text-primary">
+        <i class="bi bi-cup-straw me-2"></i>Daftar Minuman
+    </h2>
 
     <?php if (isset($minuman) && !empty($minuman)): ?>
-        <?php foreach ($minuman as $item): ?>
-            <div class="card m-2" style="width: 12rem;" id="foodCard-<?= $item->id_barang ?>" data-item-id="<?= $item->id_barang ?>">
-                <?php if (!empty($item->gambar_barang)): ?>
-                    <img src="<?= base_url('uploadsgambar/'), $item->gambar_barang ?>"
-                        class="card-img-top p-2"
-                        alt="<?= htmlspecialchars($item->nama_barang) ?>"
-                        style="height: 120px; object-fit: cover;">
-                <?php else: ?>
-                    <img src="<?= base_url('gambar/default1.jpg') ?>"
-                        class="card-img-top p-2"
-                        alt="Default food image"
-                        style="height: 120px; object-fit: cover;">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <?php foreach ($minuman as $item): ?>
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <?php if (!empty($item->gambar_barang)): ?>
+                            <img src="<?= base_url('uploadsgambar/' . $item->gambar_barang) ?>"
+                                class="card-img-top p-3"
+                                alt="<?= htmlspecialchars($item->nama_barang) ?>"
+                                style="height: 140px; object-fit: contain;">
+                        <?php else: ?>
+                            <img src="<?= base_url('gambar/default1.jpg') ?>"
+                                class="card-img-top p-3"
+                                alt="Default drink image"
+                                style="height: 140px; object-fit: contain;">
+                        <?php endif; ?>
 
-                <?php endif; ?>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><?= htmlspecialchars($item->nama_barang) ?></h5>
+                            <p class="card-text text-success fw-bold mb-1">Rp <?= number_format((int)$item->harga, 0, ',', '.') ?></p>
+                            <p class="text-muted small mb-3">Stok: <?= $item->stok ?></p>
 
-                <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($item->nama_barang) ?></h5>
-                    <br>
-                    <p class="card-text">
-                        Rp <?= number_format($item->harga, 0, ',', '.') ?>
-                    </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- <div class="btn-group">
-                            <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity(this, -1)">-</button>
-                            <input type="number" class="form-control form-control-sm text-center"
-                                value="0" min="0" style="width: 40px;" readonly>
-                            <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity(this, 1)">+</button>
-                        </div> -->
-                        <button class="btn btn-sm btn-primary"
-                            onclick="addToOrder(
-            <?= $item->id_barang ?>, 
-            '<?= htmlspecialchars($item->nama_barang) ?>', 
-            <?= $item->harga ?>, 
-            '<?= base_url('uploadsgambar/' . $item->gambar_barang) ?>'
-        )">
-                            Pilih
-                        </button>
+                            <div class="mt-auto">
+                                <?php if ($item->stok > 0): ?>
+                                    <button class="btn btn-sm btn-primary w-100"
+                                        onclick="addToOrder(
+                                            <?= $item->id_barang ?>,
+                                            '<?= htmlspecialchars($item->nama_barang) ?>',
+                                            <?= (int)$item->harga ?>,
+                                            '<?= base_url('uploadsgambar/' . $item->gambar_barang) ?>'
+                                        )">
+                                        Pilih
+                                    </button>
+                                <?php else: ?>
+                                    <button class="btn btn-sm btn-secondary w-100" disabled>Habis</button>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     <?php else: ?>
-        <div class="col-12 alert alert-warning">
-            <i class="bi bi-exclamation-triangle"></i> Tidak ada makanan yang tersedia
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle"></i> Tidak ada minuman yang tersedia.
         </div>
     <?php endif; ?>
 </div>
-
-<script>
-    function updateQuantity(btn, change) {
-        const input = btn.parentElement.querySelector('input[type="number"]');
-        let newVal = parseInt(input.value) + change;
-        input.value = newVal < 0 ? 0 : newVal;
-    }
-</script>
