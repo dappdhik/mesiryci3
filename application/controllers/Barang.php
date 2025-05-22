@@ -121,7 +121,6 @@ class Barang extends CI_Controller
             }
             $gambar = null;
         }
-        
 
         $form = array(
             'nama_barang'   => $nama,
@@ -131,8 +130,17 @@ class Barang extends CI_Controller
             'gambar_barang' => $gambar
         );
 
-        $this->Barang_model->update_barang($id, $data);
+        $this->Barang_model->update_barang($id, $form);
         redirect('admin');
+    }
+
+    public function search()
+    {
+        $keyword = htmlspecialchars($this->input->get('keyword'));
+        $data['halaman'] = 'pagedata/v_barang';
+        $data['kasir'] = 'pagedata/v_kasir';
+        $data['mhs'] = $this->Barang_model->search_barang($keyword);
+        $this->load->view('v_tampilan', $data);
     }
 
     public function hapus_barang($id)
@@ -142,7 +150,7 @@ class Barang extends CI_Controller
             unlink('./uploadsgambar/' . $barang->gambar_barang);
         }
 
-        $this->Barang_model->hapus_barang($id);
+        $this->Barang_model->delete_barang($id);
         redirect('admin');
     }
 }
