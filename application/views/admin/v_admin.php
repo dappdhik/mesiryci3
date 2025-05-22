@@ -97,23 +97,14 @@
                     </li> -->
 							<!-- link crud start -->
 							<li class="nav-item">
-								<a href="tampilinput" class="nav-link link-dark">
+								<a href="<?= base_url('admin/tampilinput')?>" class="nav-link link-dark">
 									Tambah data
 								</a>
 							</li>
 							<li class="nav-item">
 								<a href="" class="nav-link link-dark"> </a>
 							</li>
-							<!-- link crud end -->
-							<li class="nav-item">
-								<a
-									href="<?= base_url('barang/index')?>"
-									class="nav-link link-dark btn btn-danger"
-								>
-									<!-- <ion-icon name="beer-outline"></ion-icon> -->
-									Kembali
-								</a>
-							</li>
+							
 						</ul>
 						<div class="mt-auto">
                     <div class="nav-item">

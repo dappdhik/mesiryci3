@@ -53,34 +53,61 @@ class admin extends CI_Controller{
         );
         $this->load->view('admin/v_admin', $data);
     }
-    public function delete($id_barang){
+    public function delete($id)
+    {
         $this->load->model('Barang_model');
-         $deleted = $this->Barang_model->delete_barang($id_barang);
-
-    if ($deleted) {
-        // Jika berhasil hapus, beri flashdata sukses
-        $this->session->set_flashdata('success', 'Barang berhasil dihapus.');
-    } else {
-        // Jika gagal hapus
-        $this->session->set_flashdata('error', 'Gagal menghapus barang.');
-    }
-        // Redirect kembali ke halaman admin atau daftar barang
-    redirect('admin');
+        $this->Barang_model->delete_barang($id);
+        redirect('admin'); 
     }
 
-    //update barang
-    public function update_barang($id_barang){
+    public function update_barang($id)
+    {
+        $barang = $this->Barang_model->get_barang_by_id($id); 
+    
+        $gambar = $barang->gambar_barang;
+    
+        if ($this->input->post('hapus_gambar') == 1 && !empty($gambar)) {
+            $path = './uploadsgambar/' . $gambar;
+            if (file_exists($path)) {
+                unlink($path);
+            }
+            $gambar = null;
+        }
+    
+        if (!empty($_FILES['gambar']['name'])) { 
+            $config['upload_path']   = './uploadsgambar/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['max_size']      = 2048;
+    
+            $this->load->library('upload', $config);
+    
+            if ($this->upload->do_upload('gambar')) {
+                $upload_data = $this->upload->data();
+                $gambar = $upload_data['file_name'];
+    
+                if (!empty($barang->gambar_barang)) {
+                    $old_path = './uploadsgambar/' . $barang->gambar_barang;
+                    if (file_exists($old_path)) {
+                        unlink($old_path);
+                    }
+                }
+            } else {
+                echo $this->upload->display_errors();
+                return;
+            }
+        }
+    
         $data = array(
-            'id_barang'     => $id_barang,
             'nama_barang'   => $this->input->post('nama_barang'),
             'stok'          => $this->input->post('stok'),
             'harga'         => $this->input->post('harga'),
-            'kategori'      => $this->input->post('kategor'),
-
+            'kategori'      => $this->input->post('kategori'),
+            'gambar_barang' => $gambar
         );
-        $this->Barang_model->update_data($data);
+    
+        $this->Barang_model->update_barang($id, $data);
         redirect('admin');
     }
-
+    
 }
 ?>

@@ -13,18 +13,31 @@ class Auth extends CI_Controller {
     public function login()
     {
         if ($this->session->userdata('logged_in')) {
-            redirect('kasir/tampilan');
+            if ($this->session->userdata('role') == 'admin') {
+                redirect('admin/index');
+            } else {
+                redirect('kasir/tampilan');
+            }
         }
 
         if ($this->input->post('username') && $this->input->post('password')) {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
 
-            if ($this->User_model->check_login($username, $password)) {
-                $this->session->set_userdata('logged_in', TRUE);
-                $this->session->set_userdata('username', $username);
+            $user = $this->User_model->check_login($username, $password);
 
-                redirect('kasir/tampilan');
+            if ($user) {
+                $this->session->set_userdata([
+                    'logged_in' => TRUE,
+                    'username'  => $user->username,
+                    'role'      => $user->role
+                ]);
+
+                if ($user->role == 'admin') {
+                    redirect('admin/index');
+                } else {
+                    redirect('kasir/tampilan');
+                }
             } else {
                 $this->session->set_flashdata('error', 'Login gagal, username atau password salah!');
                 redirect('auth/login');
