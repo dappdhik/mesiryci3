@@ -5,19 +5,19 @@
     <div class="form-group mb-3">
         <label for="nama_barang" class="form-label">Nama Barang</label>
         <input type="text" class="form-control" name="nama_barang" id="nama_barang" 
-               value="<?= set_value('nama_barang', $barang->nama_barang) ?>" required>
+            value="<?= set_value('nama_barang', $barang->nama_barang) ?>" required>
     </div>
     
     <div class="form-group mb-3">
         <label for="stok" class="form-label">Stok</label>
         <input type="number" class="form-control" name="stok" id="stok" 
-               value="<?= set_value('stok', $barang->stok) ?>" required>
+            value="<?= set_value('stok', $barang->stok) ?>" required>
     </div>
     
     <div class="form-group mb-3">
         <label for="harga" class="form-label">Harga</label>
         <input type="number" class="form-control" name="harga" id="harga" 
-               value="<?= set_value('harga', $barang->harga) ?>" required>
+            value="<?= set_value('harga', $barang->harga) ?>" required>
     </div>
     
     <div class="form-group mb-3">
@@ -29,22 +29,29 @@
     </div>
     
     <div class="form-group mb-3">
-        <label for="gambar" class="form-label">Gambar Barang</label>
-        <?php if(!empty($barang->gambar_barang)): ?>
-            <div class="mb-2">
-                <img src="data:image/jpeg;base64,<?= base64_encode($barang->gambar_barang) ?>" 
-                     alt="Gambar Barang" style="max-height: 100px;" class="img-thumbnail">
-                <div class="form-check mt-2">
-                    <input class="form-check-input" type="checkbox" name="hapus_gambar" id="hapus_gambar" value="1">
-                    <label class="form-check-label" for="hapus_gambar">
-                        Hapus gambar saat disimpan
-                    </label>
-                </div>
+    <label for="gambar" class="form-label">Gambar Barang</label>
+
+    <?php if (!empty($barang->gambar_barang)): ?>
+        <div class="mb-2">
+            <img src="<?= base_url('uploadsgambar/' . $barang->gambar_barang) ?>" 
+                alt="Gambar Barang" 
+            style="width: 100px; max-height: 100px;" 
+                class="img-thumbnail">
+
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" name="hapus_gambar" id="hapus_gambar" value="1">
+                <label class="form-check-label" for="hapus_gambar">
+                    Hapus gambar saat disimpan
+                </label>
             </div>
-        <?php endif; ?>
-        <input type="file" class="form-control" name="gambar" id="gambar">
-        <small class="text-muted">Biarkan kosong jika tidak ingin mengubah gambar</small>
-    </div>
+        </div>
+    <?php endif; ?>
+
+    <input type="file" class="form-control" name="gambar" id="gambar">
+</div>
+    <small class="text-muted">Biarkan kosong jika tidak ingin mengubah gambar</small>
+</div>
+
     
     <button type="submit" class="btn btn-primary mt-4">
         <i class="bi bi-save"></i> Simpan Perubahan

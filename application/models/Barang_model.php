@@ -15,8 +15,14 @@ class Barang_model extends CI_Model {
         return $this->db->insert('barang', $form);
     }
 
-    public function delete_barang($id) {
-        return $this->db->where('id_barang', $id)->delete('barang');
+    public function update_barang($id, $data) {
+        $this->db->where('id_barang', $id);
+        return $this->db->update('barang', $data);
+    }
+
+    public function delete_barang($id_barang)
+    {
+        return $this->db->delete('barang', array('id_barang' => $id_barang));
     }
 
     public function ambil_makanan() {
@@ -25,10 +31,5 @@ class Barang_model extends CI_Model {
 
     public function ambil_minuman() {
         return $this->db->get_where('barang', ['kategori' => 'minuman'])->result();
-    }
-
-    public function update_data($data){
-        $this->db->where('id_barang', $data['id_barang']);
-        $this->db->update('barang', $data);
     }
 }
