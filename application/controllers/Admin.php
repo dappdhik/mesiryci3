@@ -11,7 +11,7 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
-		$q = $this->input->get('q'); // ambil parameter pencarian (jika ada)
+		$q = $this->input->get('q'); 
 		if ($q) {
 			$barang = $this->Barang_model->search_barang($q);
 		} else {
