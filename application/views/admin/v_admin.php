@@ -53,8 +53,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<!-- Sidebar -->
-				<div class="col-md-3 col-lg-2 bg-light shadow-sm p-0">
-					<div class="d-flex flex-column h-100 p-3 mt-3">
+				<div class="col-md-3 col-lg-2 bg-light shadow-sm p-0" >
+					<div class="d-flex flex-column h-100 p-3 mt-3" >
 						<a
 							href="<?= base_url('admin/index')?>"
 							class="d-flex align-items-center mb-3 text-decoration-none text-dark"
@@ -147,6 +147,13 @@
 			</div>
 		</div>
 		<!-- card end -->
+<footer class="">
+	<center>
+
+		<p>Website $2025</p>
+	</center>
+</footer>
+
 		<!-- iocons start -->
 		<script
 			type="module"
